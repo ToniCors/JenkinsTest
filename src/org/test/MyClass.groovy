@@ -1,3 +1,4 @@
+//IMPORTANTE ALTRIEMNTI NON FUNZIONA SU JENKINS
 package org.test
 
 class MyClass {

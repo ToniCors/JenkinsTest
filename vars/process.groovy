@@ -1,3 +1,5 @@
+String varString="Questa è una variabile"
+
 def info(message) {
     echo "INFO: ${message}"
 }
