@@ -1,5 +1,3 @@
-let varString="Questa è una variabile"
-
 def info(message) {
     echo "INFO: ${message}"
 }
@@ -10,8 +8,4 @@ def info() {
 
 def warning(message) {
     echo "WARNING: ${message}"
-}
-
-def warningReturn(message){
-    return  "WARNING: ${message}"
 }
