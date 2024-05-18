@@ -6,6 +6,6 @@ class MyClass {
     }
 
     def hello = { ->
-        println "Hello world!"
+        return  "Hello world!"
     }
 }
