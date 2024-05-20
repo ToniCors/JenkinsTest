@@ -9,3 +9,7 @@ def info() {
 def warning(message) {
     echo "WARNING: ${message}"
 }
+
+def warningReturn(message) {
+    return "WARNING: ${message}"
+}

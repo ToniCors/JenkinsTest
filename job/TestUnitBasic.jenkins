@@ -1,0 +1,38 @@
+pipeline {
+    agent any
+    stages {
+        stage('Check Mvn') {
+//             agent { docker 'maven:3-alpine' }
+            steps {
+                script {
+                    echo 'Hello, Maven'
+//                    def outputM = sh(script: 'mvn --version >& /dev/stdout', returnStdout: true)
+                    def outputM = sh(script: 'mvn --version |& cat', returnStdout: true).trim()
+                    echo "returnStdout OutputM: '${outputM}'"
+                }
+            }
+        }
+        stage('Check Java') {
+//             agent { docker 'openjdk:8-jre' }
+            steps {
+                script {
+                    echo 'Hello, JDK'
+//                    def outputJ = bat(script: 'java -version', returnStdout: true, encoding: 'UTF-8').trim()
+                    def outputJ = bat(script: 'java -version', returnStdout: true, encoding: 'UTF-8')
+                    echo "returnStdout OutputJ: '${outputJ}'"
+                }
+            }
+        }
+        stage('Check Groovy') {
+            steps {
+                script {
+                    echo 'Hello, Groovy'
+                    def outputG = sh(script: 'groovy -v', returnStatus: true)
+                    echo "returnStatus OutputG: '${outputG}'"
+                }
+            }
+        }
+    }
+}
+
+//returnStdout NON FUNZIONA

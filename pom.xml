@@ -8,12 +8,46 @@
     <artifactId>JenkinsLib</artifactId>
     <version>1.0</version>
 
+    <repositories>
+        <repository>
+            <id>jenkins-ci-releases</id>
+            <url>https://repo.jenkins-ci.org/releases/</url>
+        </repository>
+        <repository>
+            <id>central</id>
+            <name>Maven Repository Switchboard</name>
+            <layout>default</layout>
+            <url>https://repo1.maven.org/maven2</url>
+        </repository>
+    </repositories>
+
     <dependencies>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.groovy</groupId>-->
+<!--            <artifactId>groovy-all</artifactId>-->
+<!--            <version>4.0.21</version>-->
+<!--            <type>pom</type>-->
+<!--        </dependency>-->
+
+        <!-- Devo usare groovy 3 altimenti non funziona la libreria di test https://github.com/jenkinsci/JenkinsPipelineUnit/issues/521 -->
         <dependency>
-            <groupId>org.apache.groovy</groupId>
+            <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-all</artifactId>
-            <version>4.0.21</version>
+            <version>3.0.21</version>
             <type>pom</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.lesfurets</groupId>
+            <artifactId>jenkins-pipeline-unit</artifactId>
+            <version>1.20</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.10.2</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
